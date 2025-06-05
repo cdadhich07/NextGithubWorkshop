@@ -1,0 +1,23 @@
+name: Setup python env
+description: setu python environment
+inputs:
+  python-version:
+    description: specify python version
+    default: '3.11'
+  requirements-path:
+    required: false
+    default: 'requirements.txt'
+    description: Name of the depedency file
+
+runs:
+  using: composite
+  steps:
+  - uses: actions/setup-python@v4
+    with:
+      python-version: ${{ inputs.python-version }}
+  - name: Install dependencies
+    run: pip isntall -r ${{ inputs. requirements-path }}
+    shell: bash
+  - name: Confirm setup
+    run: echo "Python environment ready"
+    shell: bash

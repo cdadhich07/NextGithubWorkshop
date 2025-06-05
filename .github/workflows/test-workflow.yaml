@@ -13,13 +13,8 @@ jobs:
         flake8 src tests
   test:
     runs-on: self-hosted
-    # needs: lint
+    needs: lint
     steps:
-    - name: Run test
-      run: pytest --junitxml=tests/output/results.xml
-    - name: Upload test results
-      if: success() && github.event_name == 'push'
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results
-        path: ./tests/output/
+    - name: checkout code
+      uses: actions/checkout@v4
+

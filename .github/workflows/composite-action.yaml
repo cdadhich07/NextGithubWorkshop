@@ -1,0 +1,16 @@
+name: composite workflow
+on:
+  push:
+    branches: [main]
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+    - name: setup python
+      uses: ./.github/actions/setup-python-env
+      with:
+      python-version: '3.11'
+      requirements-path: 'requirements.txt'
