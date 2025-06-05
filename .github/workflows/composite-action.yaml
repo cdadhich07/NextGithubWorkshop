@@ -12,5 +12,5 @@ jobs:
     - name: setup python
       uses: ./.github/actions/setup-python-env
       with:
-      python-version: '3.11'
-      requirements-path: 'requirements.txt'
+        python-version: '3.11'
+        requirements-path: 'requirements.txt'
