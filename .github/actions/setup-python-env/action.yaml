@@ -1,5 +1,5 @@
 name: Setup python env
-description: setu python environment
+description: setup python environment
 inputs:
   python-version:
     description: specify python version
@@ -16,7 +16,7 @@ runs:
     with:
       python-version: ${{ inputs.python-version }}
   - name: Install dependencies
-    run: pip isntall -r ${{ inputs. requirements-path }}
+    run: pip install -r ${{ inputs. requirements-path }}
     shell: bash
   - name: Confirm setup
     run: echo "Python environment ready"
