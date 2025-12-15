@@ -29,7 +29,7 @@ jobs:
       run: pytest --junitxml=tests/output/results.xml
     - name: Upload test results
       if: success() && github.event_name == 'push'
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: test-results
         path: ./tests/output/
